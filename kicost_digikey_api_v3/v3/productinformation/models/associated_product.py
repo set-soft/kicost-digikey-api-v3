@@ -412,7 +412,7 @@ class AssociatedProduct(object):
 
         self._dk_plus_restriction = dk_plus_restriction
 
-   @property
+    @property
     def marketplace(self):
         """Gets the marketplace of this AssociatedProduct.  # noqa: E501
 
