@@ -1,6 +1,5 @@
 import os
 import logging
-from distutils.util import strtobool
 import kicost_digikey_api_v3.oauth.oauth2
 from kicost_digikey_api_v3.exceptions import DigikeyError
 from kicost_digikey_api_v3.v3.productinformation import (KeywordSearchRequest, KeywordSearchResponse, ProductDetails, DigiReelPricing,
@@ -37,7 +36,7 @@ class DigikeyApiWrapper(object):
         # Use normal API by default, if DIGIKEY_CLIENT_SANDBOX is True use sandbox API
         configuration.host = 'https://api.digikey.com/' + apiname + '/v3'
         try:
-            if bool(strtobool(os.getenv('DIGIKEY_CLIENT_SANDBOX'))):
+            if os.getenv('DIGIKEY_CLIENT_SANDBOX', '').lower() == 'true':
                 configuration.host = 'https://sandbox-api.digikey.com/' + apiname + '/v3'
                 self.sandbox = True
         except (ValueError, AttributeError):
