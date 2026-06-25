@@ -243,7 +243,7 @@ class LimitedTaxonomy(object):
         result = {}
 
         for attr, _ in six.iteritems(self.swagger_types):
-            value = getattr(self, attr)
+            value = getattr(self, attr, None)
             if isinstance(value, list):
                 result[attr] = list(map(
                     lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
