@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.4] - 2026-12-06
+## [0.1.5] - 2026-06-25
+### Fixed
+- Support v0.1.3 cached files when printing
+
+## [0.1.4] - 2026-06-12
 ### Fixed
 - Deprecated distutils use
 
